@@ -1,3 +1,5 @@
+#The purpose of this project is to create a model to predict if a given customer is a Bike Buyer (Yes or No) and their Average Monthly Spending. 
+
 import pandas as pd 
 import numpy as np 
 import numpy.random as nr 
@@ -151,13 +153,13 @@ print(logistic_mod.intercept_)
 print(logistic_mod.coef_)
 
 probabilities = logistic_mod.predict_proba(x_test)
-print(probabilities[:15,:])
+#print(probabilities[:15,:])
 
 def score_model(probabilities,threshold):
     return np.array([1 if x > threshold else 0 for x in probabilities[:,1]])
 scores = score_model(probabilities, 0.5)
-print(np.array(scores[:15]))
-print(y_test[:15])
+#print(np.array(scores[:15]))
+#print(y_test[:15])
 
 # def print_metrics(y_true,y_predicted,n_parameters):
 #     r2 = sklm.r2_score(y_true, y_predicted)
